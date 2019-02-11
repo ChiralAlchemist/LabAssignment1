@@ -66,7 +66,7 @@ public:
 	//	     
 	// Post: Current position is updated to next position.
 	//       item is a copy of element at current position.
-	void splitSplitLists(UnsortedType list, ItemType item, UnsortedType& list1, UnsortedType& list2);
+	void splitLists(UnsortedType list, ItemType item, UnsortedType& list1, UnsortedType& list2);
 private:
 	int length;
 	ItemType info[MAX_ITEMS];

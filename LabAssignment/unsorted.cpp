@@ -93,7 +93,7 @@ ItemType UnsortedType::GetNextItem()
 	return info[currentPos];
 }
 
-void UnsortedType::splitSplitLists(UnsortedType list, ItemType item, UnsortedType& list1, UnsortedType& list2)
+void UnsortedType::splitLists(UnsortedType list, ItemType item, UnsortedType& list1, UnsortedType& list2)
 {
 
 	bool found = false;

@@ -9,56 +9,55 @@ int main() {
 	std::cout << "Hello World!\n";
 	UnsortedType example;
 
-	ItemType item1 = ItemType();
-	ItemType item2 = ItemType();
-	ItemType item3 = ItemType();
-	ItemType item4 = ItemType();
-	ItemType item5 = ItemType();
+	ItemType itemI = ItemType();
+	string iString;
+	int n = 5;
 	UnsortedType Test1;
+	for (int i = 0; i < n; i++) 
+	{
+		iString = to_string(i);
+		itemI.Initialize(iString);
+		Test1.PutItem(itemI);
+	}
+	
+	cout << "splitLists splits based on the item given" << endl;
 	UnsortedType Test2;
-	item1.Initialize("Hello");
-	item2.Initialize("World");
-	item3.Initialize("how");
-	item4.Initialize("are");
-	item5.Initialize("YOU");
-	example.PutItem(item1);
-	example.PutItem(item2);
-	example.PutItem(item2);
-	example.PutItem(item3);
-	example.PutItem(item4);
-	example.ResetList();
-	/*ItemType t = example.GetNextItem();
-	int length = example.GetLength();*/
+	UnsortedType Test3;
+	ItemType splitItem = ItemType();
+	splitItem.Initialize("2");
+	Test1.splitLists(Test1, splitItem, Test2, Test3);
+	cout << Test2.GetLength() << endl;
+	cout << Test3.GetLength() << endl;
 
-	//example.splitSplitLists(example, item2, Test1, Test2);
+	int test1Length = Test1.GetLength();
+	cout << "DeleteItem still deletes an item" << endl;
+	cout << "Test1 length before deleteItem" << test1Length << endl;
+	Test1.DeleteItem(itemI);
+	test1Length = Test1.GetLength();
+	cout << "Test1 length after deleteItem" << test1Length << endl;
+	
+	cout << "DeleteItem does not delete an item if item given does not match any in list" << endl;
+	ItemType notInList = ItemType();
+	test1Length = Test1.GetLength();
+	cout << "Test1 length before deleteItem" << test1Length << endl;
+	notInList.Initialize("I should not be in list");
+	Test1.DeleteItem(notInList);
+	test1Length = Test1.GetLength();
+	cout << "Test1 length after deleteItem" << test1Length << endl;
+	
 
-	Test1.ResetList();
-	ItemType x = Test1.GetNextItem();
-	/*x.Print(cout);
-	cout << " " << endl;
-	Test1.GetNextItem().Print(cout);
-	cout << " " << endl;*/
+	cout << "DeleteItem delete an all if item if any are in list" << endl;
+	Test1.PutItem(itemI);
+	Test1.PutItem(itemI);
+	Test1.PutItem(itemI);
+	test1Length = Test1.GetLength();
+	cout << "Test1 length before deleteItem" << test1Length << endl;
+	Test1.DeleteItem(itemI);
+	test1Length = Test1.GetLength();
+	cout << "Test1 length after deleteItem" << test1Length << endl;
+	
+	
 
-	/*Test2.ResetList();
-	Test2.GetNextItem().Print(cout);
-	Test2.GetNextItem().Print(cout);*/
-	cout <<"length is " << example.GetLength() << endl;
-
-	example.DeleteItem(item2);
-	cout << "length is " << example.GetLength() << endl;
 	system("pause");
 	return 0;
-}
-
-void SplitLists(UnsortedType list, ItemType item, UnsortedType& list1, UnsortedType& list2) {
-
-	/*for (int idx = 0; idx <= item; idx++) 
-	{
-
-	}*/
-	//iterate throught the list
-		//b4 item index
-			//add items to list1 
-		//After
-			//add items to list2 
 }

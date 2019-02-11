@@ -3,7 +3,7 @@
 #pragma once
 #include <fstream>
 #include <string>
-const int MAX_ITEMS = 5;
+const int MAX_ITEMS = 10;
 enum RelationType { LESS, GREATER, EQUAL };
 using namespace std;
 
