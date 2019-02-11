@@ -1,1 +1,8 @@
-debug/
+Debug/
+Assignment1/debug
+Debug/
+.vs/
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+**.sln
